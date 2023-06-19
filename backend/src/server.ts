@@ -15,6 +15,23 @@ const server = new ApolloServer({
   resolvers,
 });
 
+const startServer = async () => {
+  try {
+    // Passing an ApolloServer instance to the `startStandaloneServer` function:
+    //  1. creates an Express app
+    //  2. installs your ApolloServer instance as middleware
+    //  3. prepares your app to handle incoming requests
+    const { url } = await startStandaloneServer(server, {
+      listen: { port: 4000 },
+    });
+    console.log(`🚀  Server ready at: ${url}`);
+  } catch (err) {
+    console.error("An error occurred while starting the server:", err);
+  }
+};
+
+startServer();
+
 // This final export is important!
 
 export const graphqlHandler = startServerAndCreateLambdaHandler(
@@ -22,4 +39,9 @@ export const graphqlHandler = startServerAndCreateLambdaHandler(
   // We will be using the Proxy V2 handler
   handlers.createAPIGatewayProxyEventV2RequestHandler()
 );
-// LOIC EST UN GROS NOUNOURS
+function startStandaloneServer(
+  server: ApolloServer<import("@apollo/server").BaseContext>,
+  arg1: { listen: { port: number } }
+): { url: any } | PromiseLike<{ url: any }> {
+  throw new Error("Function not implemented.");
+}
