@@ -9,7 +9,6 @@
     "http": {
       "method": "POST"
     }
-    // Other requestContext properties omitted for brevity
   },
   "rawPath": "/",
   "routeKey": "/",
