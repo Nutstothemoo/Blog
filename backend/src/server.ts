@@ -22,3 +22,4 @@ export const graphqlHandler = startServerAndCreateLambdaHandler(
   // We will be using the Proxy V2 handler
   handlers.createAPIGatewayProxyEventV2RequestHandler()
 );
+// LOIC EST UN GROS NOUNOURS
