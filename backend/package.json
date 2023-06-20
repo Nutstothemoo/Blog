@@ -13,7 +13,8 @@
   "dependencies": {
     "@apollo/server": "^4.7.4",
     "@as-integrations/aws-lambda": "^2.0.1",
-    "graphql": "^16.6.0"
+    "graphql": "^16.6.0",
+    "mongoose": "^7.3.0"
   },
   "devDependencies": {
     "@types/graphql": "^14.5.0",
