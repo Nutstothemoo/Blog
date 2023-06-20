@@ -3,8 +3,9 @@ import {
   startServerAndCreateLambdaHandler,
   handlers,
 } from "@as-integrations/aws-lambda";
-import { startStandaloneServer } from "@apollo/server/standalone";
-// import resolvers from "./resolvers";
+// import resolvers from "./resolvers/resolvers";
+// import {typeDefs} from "./graphql/index";
+
 const typeDefs = `#graphql
   type User {
     id: ID!
@@ -44,24 +45,16 @@ const typeDefs = `#graphql
     ): Post!
   }
 `;
-// console.log(resolvers)
+// console.log(resolvers);
 const resolvers = {
   Query: {
     hello: () => "world",
   },
 };
-
 const server = new ApolloServer({
   typeDefs,
-  resolvers,
+  resolvers: resolvers,
 });
-
-// This final export is important!
-const { url } = await startStandaloneServer(server, {
-  listen: { port: 4000 },
-});
-
-console.log(`🚀  Server ready at: ${url}`);
 
 export const graphqlHandler = startServerAndCreateLambdaHandler(
   server,
