@@ -1,12 +1,15 @@
 {
   "name": "backend",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
-  "license": "MIT",
-  "type": "module",
   "scripts": {
-    "dev": "serverless invoke local -f graphql -p query.json"
+    "compile": "tsc",
+    "start": "serverless invoke local -f graphql -p query.json"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "@apollo/server": "^4.7.4",
     "@as-integrations/aws-lambda": "^2.0.1",
