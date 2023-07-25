@@ -1,7 +1,6 @@
 // @ts-nocheck
 import mongoose from "mongoose";
-
-require("dotenv").config();
+// require("dotenv").config();
 
 const optionsConnection: Record<any, any> = {
   useNewUrlParser: true,
@@ -36,7 +35,9 @@ const makeNewConnection = (uri: string) => {
   return db;
 };
 
-const mongo = makeNewConnection(process.env.MONGO_URI);
+const mongo = makeNewConnection(
+  "mongodb+srv://mitrandi_access:xhkKbaL67zScNyN9hFDXQ@mitrandi.ojizh86.mongodb.net/mitrandi"
+);
 
 const mongoDB = {
   mongo,

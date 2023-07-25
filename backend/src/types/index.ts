@@ -23,7 +23,7 @@ const typeDefs = `#graphql
 
   type Query {
     hello: String
-    users: [User!]!
+    getUsers: [User!]!
     postsByCategory(categoryId: ID!): [Post!]!
     postsByAuthor(authorId: ID!): [Post!]!
   }

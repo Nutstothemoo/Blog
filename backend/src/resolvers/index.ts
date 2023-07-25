@@ -3,7 +3,7 @@ import User from "../models/userModel";
 const resolvers = {
   Query: {
     hello: () => "world",
-    getAllUsers: async () => {
+    getUsers: async () => {
       try {
         const users = await User.find();
         return users;
